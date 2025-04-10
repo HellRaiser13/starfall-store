@@ -1,1 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>StarFall Minecraft Store</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            background-color: #1c1c1c;
+            color: white;
+        }
 
+        header {
+            background-color: #2b1f3d;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 2px solid #d45fb5;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.4);
+        }
+
+        h1 {
+            font-size: 3em;
+            color: #a18dc6;
+            text-shadow: 3px 3px 6px #000000;
+        }
+
+        .section-title {
+            font-size: 2em;
+            text-align: center;
+            margin-top: 40px;
+            color: #a18dc6;
+            text-shadow: 2px 2px 5px #000000;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 40px 10px;
+        }
+
+        /* Rank and Token Card Styles */
+        .rank, .token {
+            width: 250px;
+            margin: 20px;
+            padding: 20px;
+            background-color: #3b2a53;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+            transition: all 0.3s ease;
+        }
+
+        .rank:hover, .token:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.8);
+        }
+
+        .rank h2, .token h2 {
+            font-size: 1.5em;
+            color: #d45fb5;
+        }
+
+        .price {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #ffcc00;
+            margin: 10px 0;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #d45fb5;
+            color: black;
+            font-size: 1.1em;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #a18dc6;
+            transform: translateY(-2px);
+        }
+
+        /* Form Styles */
+        .form-container {
+            margin: 50px auto;
+            width: 80%;
+            max-width: 500px;
+            background-color: #2b1f3d;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.5);
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            background-color: #3b2a53;
+            border: 1px solid #6a4b77;
+            border-radius: 5px;
+            color: white;
+            font-size: 1.1em;
+        }
+
+        /* Background Animation */
+        .background-animation {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://www.minecraft.net/content/dam/minecraft/brand/minecraft-logo-crowned.png') no-repeat center center fixed;
+            animation: moveBackground 30s infinite linear;
+            z-index: -1;
+        }
+
+        @keyframes moveBackground {
+            from {
+                background-position: 0 0;
+            }
+            to {
+                background-position: 5000px 5000px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="background-animation"></div>
+
+    <header>
+        <h1>StarFall Minecraft Store</h1>
+        <p>Buy ranks, tokens, and crate keys for your StarFall experience!</p>
+    </header>
+
+    <section>
+        <div class="section-title">Ranks</div>
+        <div class="container">
+            <!-- Cosmo Rank -->
+            <div class="rank">
+                <h2>Cosmo Rank</h2>
+                <p>Basic benefits, access to basic features on the server.</p>
+                <p class="price">10₾</p>
+                <a href="https://your-payment-link.com" class="btn">Buy Cosmo Rank</a>
+            </div>
+
+            <!-- Absolute Rank -->
+            <div class="rank">
+                <h2>Absolute Rank</h2>
+                <p>All Cosmo benefits + higher-tier features and VIP area access.</p>
+                <p class="price">20₾</p>
+                <a href="https://your-payment-link.com" class="btn">Buy Absolute Rank</a>
+            </div>
+
+            <!-- Overlord Rank -->
+            <div class="rank">
+                <h2>Overlord Rank</h2>
+                <p>All Absolute benefits + enhanced perks and priority access.</p>
+                <p class="price">35₾</p>
+                <a href="https://your-payment-link.com" class="btn">Buy Overlord Rank</a>
+            </div>
+
+            <!-- Immortal Rank -->
+            <div class="rank">
+                <h2>Immortal Rank</h2>
+                <p>All Overlord benefits + exclusive perks and crate rewards.</p>
+                <p class="price">50₾</p>
+                <a href="https://your-payment-link.com" class="btn">Buy Immortal Rank</a>
+            </div>
+
+            <!-- Star Rank -->
+            <div class="rank">
+                <h2>Star Rank</h2>
+                <p>All Immortal benefits + rare items and VIP support.</p>
+                <p class="price">75₾</p>
+                <a href="https://your-payment-link.com" class="btn">Buy Star Rank</a>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="section-title">Tokens</div>
+        <div class="container">
+            <!-- 200 Tokens -->
+            <div class="token">
+                <h2>200 Tokens</h2>
+                <p>Get 200 tokens for in-game purchases.</p>
+                <p class="price">5₾</p>
+                <a href="https://your-payment-link.com" class="btn">Buy 200 Tokens</a>
+            </div>
+
+            <!-- 500 Tokens -->
+            <div class="token">
+                <h2>500 Tokens</h2>
+                <p>Get 500 tokens for in-game purchases.</p>
+                <p class="price">10₾</p>
+                <a href="https://your-payment-link.com" class="btn">Buy 500 Tokens</a>
+            </div>
+
+            <!-- 800 Tokens -->
+            <div class="token">
+                <h2>800 Tokens</h2>
+                <p>Get 800 tokens for in-game purchases.</p>
+                <p class="price">15₾</p>
+                <a href="https://your-payment-link.com" class="btn">Buy 800 Tokens</a>
+            </div>
+
+            <!-- 1000 Tokens -->
+            <div class="token">
+                <h2>1000 Tokens</h2>
+                <p>Get 1000 tokens for in-game purchases.</p>
+                <p class="price">20₾</p>
+                <a href="https://your-payment-link.com" class="btn">Buy 1000 Tokens</a>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="section-title">Enter Your Nickname</div>
+        <div class="form-container">
+            <input type="text" class="input-field" placeholder="Enter your Minecraft nickname">
+            <a href="https://your-checkout-link.com" class="btn">Proceed to Checkout</a>
+        </div>
+    </section>
+
+    <section>
+        <div class="section-title">Payment</div>
+        <div class="form-container">
+            <a href="https://your-payment-link.com" class="btn">Add Card Information</a>
+        </div>
+    </section>
+</body>
+</html>
