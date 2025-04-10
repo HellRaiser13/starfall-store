@@ -4,182 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>StarFall Minecraft Store</title>
-    <style>
-        /* General Reset */
-        body, html, div, p, h1, h2, h3, ul, li, a {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Arial', sans-serif;
-            color: #fff;
-            background-color: #1a1a1a;
-            overflow-x: hidden;
-            position: relative;
-        }
-
-        /* Background Animation */
-        .background {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('https://yourbackgroundimageurl.com') no-repeat center center fixed;
-            background-size: cover;
-            animation: backgroundAnimation 60s linear infinite;
-            z-index: -1;
-        }
-
-        @keyframes backgroundAnimation {
-            from {
-                background-position: 0 0;
-            }
-            to {
-                background-position: 5000px 5000px;
-            }
-        }
-
-        /* Header */
-        header {
-            background: rgba(40, 40, 40, 0.8);
-            padding: 20px;
-            text-align: center;
-            border-bottom: 2px solid #aa6fd0;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.4);
-        }
-
-        header h1 {
-            font-size: 4rem;
-            color: #aa6fd0;
-            text-shadow: 3px 3px 6px #000;
-        }
-
-        .auth-section {
-            margin-top: 20px;
-        }
-
-        .auth-section input {
-            padding: 10px;
-            width: 250px;
-            font-size: 1.2rem;
-            border-radius: 5px;
-            border: none;
-            margin-right: 10px;
-        }
-
-        .auth-section button {
-            padding: 12px 20px;
-            font-size: 1.2rem;
-            background-color: #aa6fd0;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            color: black;
-        }
-
-        .auth-section button:hover {
-            background-color: #8843a2;
-        }
-
-        /* Section Titles */
-        .section-title {
-            font-size: 2rem;
-            text-align: center;
-            margin-top: 40px;
-            color: #aa6fd0;
-        }
-
-        /* Product Cards */
-        .container {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 20px;
-            padding: 40px 10px;
-        }
-
-        .card {
-            width: 250px;
-            background: rgba(80, 80, 80, 0.7);
-            border-radius: 10px;
-            padding: 20px;
-            text-align: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
-            transition: all 0.3s ease;
-        }
-
-        .card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.8);
-        }
-
-        .card h2 {
-            font-size: 1.6rem;
-            color: #aa6fd0;
-            margin-bottom: 10px;
-        }
-
-        .card .price {
-            font-size: 1.2rem;
-            color: #ffcc00;
-            margin-bottom: 15px;
-        }
-
-        .card a {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #aa6fd0;
-            color: black;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 1.1rem;
-            transition: background-color 0.3s;
-        }
-
-        .card a:hover {
-            background-color: #8843a2;
-        }
-
-        /* Cart and Checkout */
-        .cart-container {
-            text-align: center;
-            margin: 40px 0;
-        }
-
-        .cart-container button {
-            padding: 15px 25px;
-            background-color: #aa6fd0;
-            color: black;
-            font-size: 1.3rem;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .cart-container button:hover {
-            background-color: #8843a2;
-        }
-
-        /* Footer */
-        footer {
-            background-color: #2b1f3d;
-            text-align: center;
-            padding: 20px;
-            margin-top: 50px;
-        }
-
-        footer a {
-            color: #aa6fd0;
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            color: #ffffff;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- Background Animation -->
@@ -187,82 +12,172 @@
 
     <!-- Header Section -->
     <header>
-        <h1>StarFall Minecraft Store</h1>
+        <div class="logo">
+            <img src="your_logo.png" alt="StarFall Logo">
+        </div>
         <div class="auth-section">
-            <input type="text" id="username" placeholder="Enter Minecraft Username">
-            <button onclick="authenticateUser()">Proceed</button>
+            <h1>Welcome to StarFall Minecraft Store</h1>
+            <p>Enter your Minecraft Username to get started:</p>
+            <input type="text" id="username" placeholder="Minecraft Username">
+            <button onclick="redirectToPage('ranks.html')">Proceed</button>
         </div>
     </header>
 
-    <!-- Ranks Section -->
+    <footer>
+        <p>StarFall Minecraft Server | <a href="https://discord.gg/yourdiscord">Join our Discord</a></p>
+    </footer>
+
+    <script>
+        function redirectToPage(page) {
+            let username = document.getElementById("username").value;
+            if (username) {
+                localStorage.setItem("username", username);
+                window.location.href = page;
+            } else {
+                alert("Please enter a Minecraft username.");
+            }
+        }
+    </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ranks - StarFall Store</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="your_logo.png" alt="StarFall Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="tokens.html">Tokens</a></li>
+                <li><a href="checkout.html">Checkout</a></li>
+            </ul>
+        </nav>
+    </header>
+
     <section>
-        <div class="section-title">Choose Your Rank</div>
-        <div class="container">
-            <!-- Cosmo Rank -->
-            <div class="card">
-                <h2>Cosmo Rank</h2>
-                <p>Unlock basic features and access to exclusive areas!</p>
+        <h2>Choose Your Rank</h2>
+        <div class="product-container">
+            <div class="product-card">
+                <h3>Cosmo Rank</h3>
+                <p>Basic features and exclusive areas.</p>
                 <div class="price">10₾</div>
-                <a href="https://your-payment-link.com" target="_blank">Buy Cosmo Rank</a>
+                <a href="checkout.html">Buy Cosmo Rank</a>
             </div>
-
-            <!-- Absolute Rank -->
-            <div class="card">
-                <h2>Absolute Rank</h2>
-                <p>Access to premium features with higher-tier perks.</p>
+            <div class="product-card">
+                <h3>Absolute Rank</h3>
+                <p>Premium features and exclusive benefits.</p>
                 <div class="price">20₾</div>
-                <a href="https://your-payment-link.com" target="_blank">Buy Absolute Rank</a>
+                <a href="checkout.html">Buy Absolute Rank</a>
             </div>
-
-            <!-- Overlord Rank -->
-            <div class="card">
-                <h2>Overlord Rank</h2>
-                <p>Complete domination with powerful perks and rewards.</p>
-                <div class="price">35₾</div>
-                <a href="https://your-payment-link.com" target="_blank">Buy Overlord Rank</a>
-            </div>
-
-            <!-- Immortal Rank -->
-            <div class="card">
-                <h2>Immortal Rank</h2>
-                <p>All features + exclusive benefits for the top players!</p>
-                <div class="price">50₾</div>
-                <a href="https://your-payment-link.com" target="_blank">Buy Immortal Rank</a>
-            </div>
+            <!-- Add more ranks as needed -->
         </div>
     </section>
 
-    <!-- Tokens Section -->
+    <footer>
+        <p>StarFall Minecraft Server | <a href="https://discord.gg/yourdiscord">Join our Discord</a></p>
+    </footer>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tokens - StarFall Store</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="your_logo.png" alt="StarFall Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="ranks.html">Ranks</a></li>
+                <li><a href="checkout.html">Checkout</a></li>
+            </ul>
+        </nav>
+    </header>
+
     <section>
-        <div class="section-title">Buy Tokens</div>
-        <div class="container">
-            <!-- 200 Tokens -->
-            <div class="card">
-                <h2>200 Tokens</h2>
-                <p>Get tokens for in-game purchases and rewards.</p>
+        <h2>Buy Tokens</h2>
+        <div class="product-container">
+            <div class="product-card">
+                <h3>200 Tokens</h3>
+                <p>Tokens for in-game rewards.</p>
                 <div class="price">5₾</div>
-                <a href="https://your-payment-link.com" target="_blank">Buy 200 Tokens</a>
+                <a href="checkout.html">Buy 200 Tokens</a>
             </div>
-
-            <!-- 500 Tokens -->
-            <div class="card">
-                <h2>500 Tokens</h2>
-                <p>Get more tokens for even more exclusive purchases.</p>
+            <div class="product-card">
+                <h3>500 Tokens</h3>
+                <p>Get more tokens for exclusive items.</p>
                 <div class="price">10₾</div>
-                <a href="https://your-payment-link.com" target="_blank">Buy 500 Tokens</a>
+                <a href="checkout.html">Buy 500 Tokens</a>
+            </div>
+            <!-- Add more token packages as needed -->
+        </div>
+    </section>
+
+    <footer>
+        <p>StarFall Minecraft Server | <a href="https://discord.gg/yourdiscord">Join our Discord</a></p>
+    </footer>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - StarFall Store</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="your_logo.png" alt="StarFall Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="ranks.html">Ranks</a></li>
+                <li><a href="tokens.html">Tokens</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section>
+        <h2>Checkout</h2>
+        <form action="process_payment.php" method="POST">
+            <label for="username">Minecraft Username:</label>
+            <input type="text" id="username" name="username" value="" placeholder="Minecraft Username" required>
+
+            <h3>Your Cart:</h3>
+            <!-- Example Cart -->
+            <div id="cart-items">
+                <p>Cosmo Rank - 10₾</p>
+                <p>200 Tokens - 5₾</p>
             </div>
 
-            <!-- 800 Tokens -->
-            <div class="card">
-                <h2>800 Tokens</h2>
-                <p>Purchase more tokens and unlock rare in-game items.</p>
-                <div class="price">15₾</div>
-                <a href="https://your-payment-link.com" target="_blank">Buy 800 Tokens</a>
-            </div>
+            <h3>Total: 15₾</h3>
+            
+            <label for="card-details">Enter Card Information:</label>
+            <input type="text" id="card-details" name="card-details" placeholder="Card Number" required>
 
-            <!-- 1000 Tokens -->
-            <div class="card">
-                <h2>1000 Tokens</h2>
-                <p>Max out your tokens for all the best loot and perks.</p>
-                <div class="price">20₾</div>
-                <a href="https://your-payment-link.com" target
+            <button type="submit">Complete Purchase</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>StarFall Minecraft Server | <a href="https://discord.gg/yourdiscord">Join our Discord</a></p>
+    </footer>
+</body>
+</html>
