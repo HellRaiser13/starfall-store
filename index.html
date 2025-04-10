@@ -3,61 +3,308 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ranks - StarFall Store</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>StarFall Minecraft Store</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1c1c1c;
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: #2d2d2d;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header .logo img {
+            width: 200px;
+        }
+
+        header nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        header nav ul li {
+            display: inline;
+            margin: 10px;
+        }
+
+        header nav ul li a {
+            color: #a8a8a8;
+            text-decoration: none;
+        }
+
+        footer {
+            background: #2d2d2d;
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        footer a {
+            color: #a8a8a8;
+            text-decoration: none;
+        }
+
+        /* Background Animation */
+        .background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://www.example.com/minecraft-background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            z-index: -1;
+            animation: moveBackground 60s linear infinite;
+        }
+
+        @keyframes moveBackground {
+            0% {
+                background-position: 0 0;
+            }
+            100% {
+                background-position: 100% 100%;
+            }
+        }
+
+        /* Section Styles */
+        .product-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .product-card {
+            background: #333;
+            margin: 20px;
+            padding: 20px;
+            width: 250px;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        .product-card h3 {
+            margin-top: 0;
+        }
+
+        .price {
+            font-size: 1.5em;
+            color: #6f00ff;
+        }
+
+        .product-card a {
+            display: inline-block;
+            margin-top: 10px;
+            background-color: #6f00ff;
+            padding: 10px 20px;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .product-card a:hover {
+            background-color: #4000b3;
+        }
+
+        form {
+            max-width: 500px;
+            margin: auto;
+            padding: 20px;
+            background: #333;
+            border-radius: 10px;
+        }
+
+        form input, form button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+        }
+
+        form button {
+            background-color: #6f00ff;
+            color: white;
+            cursor: pointer;
+        }
+
+        form button:hover {
+            background-color: #4000b3;
+        }
+
+        .auth-section {
+            padding: 20px;
+        }
+
+        .auth-section input {
+            padding: 10px;
+            margin-top: 10px;
+            width: 50%;
+            font-size: 18px;
+        }
+    </style>
 </head>
 <body>
+    <!-- Background Animation -->
+    <div class="background"></div>
+
+    <!-- Header Section -->
     <header>
         <div class="logo">
             <img src="your_logo.png" alt="StarFall Logo">
         </div>
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="tokens.html">Tokens</a></li>
-                <li><a href="checkout.html">Checkout</a></li>
+                <li><a href="#home-section">Home</a></li>
+                <li><a href="#ranks-section">Ranks</a></li>
+                <li><a href="#tokens-section">Tokens</a></li>
+                <li><a href="#checkout-section">Checkout</a></li>
             </ul>
         </nav>
     </header>
 
-    <section>
+    <!-- Home Section -->
+    <section id="home-section">
+        <div class="auth-section">
+            <h1>Welcome to StarFall Minecraft Store</h1>
+            <p>Enter your Minecraft Username to get started:</p>
+            <input type="text" id="username" placeholder="Minecraft Username">
+            <button onclick="navigateToRanks()">Proceed</button>
+        </div>
+    </section>
+
+    <!-- Ranks Section -->
+    <section id="ranks-section">
         <h2>Choose Your Rank</h2>
         <div class="product-container">
             <div class="product-card">
                 <h3>Cosmo Rank</h3>
                 <p>Basic features and exclusive areas.</p>
                 <div class="price">10₾</div>
-                <a href="checkout.html">Buy Cosmo Rank</a>
+                <a href="#checkout-section" onclick="savePurchase('Cosmo Rank', 10)">Buy Cosmo Rank</a>
             </div>
             <div class="product-card">
                 <h3>Absolute Rank</h3>
                 <p>Premium features and exclusive benefits.</p>
                 <div class="price">20₾</div>
-                <a href="checkout.html">Buy Absolute Rank</a>
+                <a href="#checkout-section" onclick="savePurchase('Absolute Rank', 20)">Buy Absolute Rank</a>
             </div>
             <div class="product-card">
                 <h3>Overlord Rank</h3>
                 <p>Top-tier features for elite players.</p>
                 <div class="price">50₾</div>
-                <a href="checkout.html">Buy Overlord Rank</a>
+                <a href="#checkout-section" onclick="savePurchase('Overlord Rank', 50)">Buy Overlord Rank</a>
             </div>
             <div class="product-card">
                 <h3>Immortal Rank</h3>
                 <p>Access to immortality features and more.</p>
                 <div class="price">100₾</div>
-                <a href="checkout.html">Buy Immortal Rank</a>
+                <a href="#checkout-section" onclick="savePurchase('Immortal Rank', 100)">Buy Immortal Rank</a>
             </div>
             <div class="product-card">
                 <h3>Star Rank</h3>
                 <p>The ultimate rank with all features unlocked.</p>
                 <div class="price">200₾</div>
-                <a href="checkout.html">Buy Star Rank</a>
+                <a href="#checkout-section" onclick="savePurchase('Star Rank', 200)">Buy Star Rank</a>
             </div>
         </div>
+    </section>
+
+    <!-- Tokens Section -->
+    <section id="tokens-section">
+        <h2>Buy Tokens</h2>
+        <div class="product-container">
+            <div class="product-card">
+                <h3>200 Tokens</h3>
+                <p>Tokens for in-game rewards.</p>
+                <div class="price">5₾</div>
+                <a href="#checkout-section" onclick="savePurchase('200 Tokens', 5)">Buy 200 Tokens</a>
+            </div>
+            <div class="product-card">
+                <h3>500 Tokens</h3>
+                <p>Get more tokens for exclusive items.</p>
+                <div class="price">10₾</div>
+                <a href="#checkout-section" onclick="savePurchase('500 Tokens', 10)">Buy 500 Tokens</a>
+            </div>
+            <div class="product-card">
+                <h3>800 Tokens</h3>
+                <p>Access exclusive rewards.</p>
+                <div class="price">15₾</div>
+                <a href="#checkout-section" onclick="savePurchase('800 Tokens', 15)">Buy 800 Tokens</a>
+            </div>
+            <div class="product-card">
+                <h3>1000 Tokens</h3>
+                <p>Best value for in-game purchases.</p>
+                <div class="price">20₾</div>
+                <a href="#checkout-section" onclick="savePurchase('1000 Tokens', 20)">Buy 1000 Tokens</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Checkout Section -->
+    <section id="checkout-section">
+        <h2>Checkout</h2>
+        <form action="#" method="POST">
+            <label for="username">Minecraft Username:</label>
+            <input type="text" id="username" name="username" placeholder="Minecraft Username" required>
+
+            <h3>Your Cart:</h3>
+            <div id="cart-items"></div>
+
+            <h3>Total: <span id="total-price">0₾</span></h3>
+
+            <label for="card-details">Enter Card Information:</label>
+            <input type="text" id="card-details" name="card-details" placeholder="Card Number" required>
+
+            <button type="submit">Complete Purchase</button>
+        </form>
     </section>
 
     <footer>
         <p>StarFall Minecraft Server | <a href="https://discord.gg/yourdiscord">Join our Discord</a></p>
     </footer>
+
+    <script>
+        let cart = [];
+
+        function navigateToRanks() {
+            let username = document.getElementById("username").value;
+            if (username) {
+                localStorage.setItem("username", username);
+                document.querySelector("#ranks-section").scrollIntoView({ behavior: "smooth" });
+            } else {
+                alert("Please enter a Minecraft username.");
+            }
+        }
+
+        function savePurchase(item, price) {
+            cart.push({ item, price });
+            updateCart();
+        }
+
+        function updateCart() {
+            let cartItems = document.getElementById("cart-items");
+            cartItems.innerHTML = "";
+            let total = 0;
+
+            cart.forEach(function (purchase) {
+                let div = document.createElement("div");
+                div.innerHTML = `<p>${purchase.item} - ${purchase.price}₾</p>`;
+                cartItems.appendChild(div);
+                total += purchase.price;
+            });
+
+            document.getElementById("total-price").innerText = total + "₾";
+        }
+    </script>
 </body>
 </html>
