@@ -8,48 +8,57 @@
         /* Global Styles */
         body {
             font-family: Arial, sans-serif;
-            background-color: #1c1c1c;
-            color: white;
+            background-color: #1a1a1a;
             margin: 0;
             padding: 0;
+            color: white;
         }
 
         header {
-            background: #2d2d2d;
+            background: linear-gradient(135deg, #6a1b9a, #9c27b0);
             padding: 20px;
             text-align: center;
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
         }
 
         header .logo img {
-            width: 200px;
+            width: 250px;
         }
 
         header nav ul {
             list-style: none;
             padding: 0;
+            display: inline-flex;
+            margin-top: 20px;
         }
 
         header nav ul li {
-            display: inline;
             margin: 10px;
         }
 
         header nav ul li a {
-            color: #a8a8a8;
+            color: white;
+            font-size: 18px;
             text-decoration: none;
+            font-weight: bold;
+            padding: 10px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        header nav ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
         }
 
         footer {
-            background: #2d2d2d;
-            padding: 10px;
+            background: #1d1d1d;
+            padding: 15px;
             text-align: center;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
+            margin-top: 50px;
         }
 
         footer a {
-            color: #a8a8a8;
+            color: #9c27b0;
             text-decoration: none;
         }
 
@@ -76,34 +85,55 @@
         }
 
         /* Section Styles */
+        .section {
+            padding: 50px;
+            text-align: center;
+            background-color: #1c1c1c;
+        }
+
+        h1, h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
         .product-container {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
+            margin-top: 30px;
         }
 
         .product-card {
             background: #333;
-            margin: 20px;
+            margin: 15px;
             padding: 20px;
             width: 250px;
             text-align: center;
-            border-radius: 10px;
+            border-radius: 15px;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s;
+        }
+
+        .product-card:hover {
+            transform: scale(1.05);
         }
 
         .product-card h3 {
             margin-top: 0;
+            font-size: 1.8em;
         }
 
         .price {
             font-size: 1.5em;
-            color: #6f00ff;
+            color: #9c27b0;
+            margin-top: 10px;
         }
 
         .product-card a {
             display: inline-block;
-            margin-top: 10px;
-            background-color: #6f00ff;
+            margin-top: 20px;
+            background-color: #9c27b0;
             padding: 10px 20px;
             color: white;
             text-decoration: none;
@@ -112,44 +142,71 @@
         }
 
         .product-card a:hover {
-            background-color: #4000b3;
+            background-color: #6a1b9a;
         }
 
+        /* Form Styles */
         form {
             max-width: 500px;
             margin: auto;
             padding: 20px;
             background: #333;
             border-radius: 10px;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
         }
 
         form input, form button {
             width: 100%;
-            padding: 10px;
+            padding: 15px;
             margin: 10px 0;
             border: none;
             border-radius: 5px;
+            font-size: 16px;
         }
 
         form button {
-            background-color: #6f00ff;
+            background-color: #9c27b0;
             color: white;
             cursor: pointer;
+            transition: background-color 0.3s;
         }
 
         form button:hover {
-            background-color: #4000b3;
+            background-color: #6a1b9a;
         }
 
-        .auth-section {
-            padding: 20px;
+        .cart-summary {
+            margin-top: 30px;
+            text-align: left;
+        }
+
+        .cart-summary p {
+            font-size: 1.2em;
+            color: #fff;
         }
 
         .auth-section input {
-            padding: 10px;
-            margin-top: 10px;
-            width: 50%;
-            font-size: 18px;
+            width: 70%;
+            padding: 12px;
+            font-size: 16px;
+            margin-top: 20px;
+            border-radius: 5px;
+            border: none;
+        }
+
+        .auth-section button {
+            padding: 12px;
+            background-color: #9c27b0;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        .auth-section button:hover {
+            background-color: #6a1b9a;
         }
     </style>
 </head>
@@ -173,17 +230,16 @@
     </header>
 
     <!-- Home Section -->
-    <section id="home-section">
+    <section id="home-section" class="section">
+        <h1>Welcome to the StarFall Minecraft Store</h1>
         <div class="auth-section">
-            <h1>Welcome to StarFall Minecraft Store</h1>
-            <p>Enter your Minecraft Username to get started:</p>
-            <input type="text" id="username" placeholder="Minecraft Username">
+            <input type="text" id="username" placeholder="Enter Minecraft Username">
             <button onclick="navigateToRanks()">Proceed</button>
         </div>
     </section>
 
     <!-- Ranks Section -->
-    <section id="ranks-section">
+    <section id="ranks-section" class="section">
         <h2>Choose Your Rank</h2>
         <div class="product-container">
             <div class="product-card">
@@ -220,7 +276,7 @@
     </section>
 
     <!-- Tokens Section -->
-    <section id="tokens-section">
+    <section id="tokens-section" class="section">
         <h2>Buy Tokens</h2>
         <div class="product-container">
             <div class="product-card">
@@ -251,13 +307,12 @@
     </section>
 
     <!-- Checkout Section -->
-    <section id="checkout-section">
+    <section id="checkout-section" class="section">
         <h2>Checkout</h2>
-        <form action="#" method="POST">
+        <form>
             <label for="username">Minecraft Username:</label>
             <input type="text" id="username" name="username" placeholder="Minecraft Username" required>
 
-            <h3>Your Cart:</h3>
             <div id="cart-items"></div>
 
             <h3>Total: <span id="total-price">0₾</span></h3>
@@ -269,6 +324,7 @@
         </form>
     </section>
 
+    <!-- Footer Section -->
     <footer>
         <p>StarFall Minecraft Server | <a href="https://discord.gg/yourdiscord">Join our Discord</a></p>
     </footer>
