@@ -3,51 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StarFall Minecraft Store</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <!-- Background Animation -->
-    <div class="background"></div>
-
-    <!-- Header Section -->
-    <header>
-        <div class="logo">
-            <img src="your_logo.png" alt="StarFall Logo">
-        </div>
-        <div class="auth-section">
-            <h1>Welcome to StarFall Minecraft Store</h1>
-            <p>Enter your Minecraft Username to get started:</p>
-            <input type="text" id="username" placeholder="Minecraft Username">
-            <button onclick="redirectToPage('ranks.html')">Proceed</button>
-        </div>
-    </header>
-
-    <footer>
-        <p>StarFall Minecraft Server | <a href="https://discord.gg/yourdiscord">Join our Discord</a></p>
-    </footer>
-
-    <script>
-        function redirectToPage(page) {
-            let username = document.getElementById("username").value;
-            if (username) {
-                localStorage.setItem("username", username);
-                window.location.href = page;
-            } else {
-                alert("Please enter a Minecraft username.");
-            }
-        }
-    </script>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ranks - StarFall Store</title>
     <link rel="stylesheet" href="styles.css">
-
 </head>
 <body>
     <header>
@@ -78,103 +35,25 @@
                 <div class="price">20₾</div>
                 <a href="checkout.html">Buy Absolute Rank</a>
             </div>
-            <!-- Add more ranks as needed -->
-        </div>
-    </section>
-
-    <footer>
-        <p>StarFall Minecraft Server | <a href="https://discord.gg/yourdiscord">Join our Discord</a></p>
-    </footer>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tokens - StarFall Store</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <header>
-        <div class="logo">
-            <img src="your_logo.png" alt="StarFall Logo">
-        </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="ranks.html">Ranks</a></li>
-                <li><a href="checkout.html">Checkout</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <section>
-        <h2>Buy Tokens</h2>
-        <div class="product-container">
             <div class="product-card">
-                <h3>200 Tokens</h3>
-                <p>Tokens for in-game rewards.</p>
-                <div class="price">5₾</div>
-                <a href="checkout.html">Buy 200 Tokens</a>
+                <h3>Overlord Rank</h3>
+                <p>Top-tier features for elite players.</p>
+                <div class="price">50₾</div>
+                <a href="checkout.html">Buy Overlord Rank</a>
             </div>
             <div class="product-card">
-                <h3>500 Tokens</h3>
-                <p>Get more tokens for exclusive items.</p>
-                <div class="price">10₾</div>
-                <a href="checkout.html">Buy 500 Tokens</a>
+                <h3>Immortal Rank</h3>
+                <p>Access to immortality features and more.</p>
+                <div class="price">100₾</div>
+                <a href="checkout.html">Buy Immortal Rank</a>
             </div>
-            <!-- Add more token packages as needed -->
-        </div>
-    </section>
-
-    <footer>
-        <p>StarFall Minecraft Server | <a href="https://discord.gg/yourdiscord">Join our Discord</a></p>
-    </footer>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Checkout - StarFall Store</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <header>
-        <div class="logo">
-            <img src="your_logo.png" alt="StarFall Logo">
-        </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="ranks.html">Ranks</a></li>
-                <li><a href="tokens.html">Tokens</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <section>
-        <h2>Checkout</h2>
-        <form action="process_payment.php" method="POST">
-            <label for="username">Minecraft Username:</label>
-            <input type="text" id="username" name="username" value="" placeholder="Minecraft Username" required>
-
-            <h3>Your Cart:</h3>
-            <!-- Example Cart -->
-            <div id="cart-items">
-                <p>Cosmo Rank - 10₾</p>
-                <p>200 Tokens - 5₾</p>
+            <div class="product-card">
+                <h3>Star Rank</h3>
+                <p>The ultimate rank with all features unlocked.</p>
+                <div class="price">200₾</div>
+                <a href="checkout.html">Buy Star Rank</a>
             </div>
-
-            <h3>Total: 15₾</h3>
-            
-            <label for="card-details">Enter Card Information:</label>
-            <input type="text" id="card-details" name="card-details" placeholder="Card Number" required>
-
-            <button type="submit">Complete Purchase</button>
-        </form>
+        </div>
     </section>
 
     <footer>
