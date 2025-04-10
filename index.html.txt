@@ -1,105 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>StarFall Store</title>
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Press Start 2P', cursive;
-      background: url('https://i.imgur.com/VsRneLz.png') no-repeat center center fixed; /* Minecraft sky bg */
-      background-size: cover;
-      color: white;
-    }
-    header {
-      background: rgba(0,0,0,0.7);
-      text-align: center;
-      padding: 2rem 1rem;
-    }
-    header h1 {
-      font-size: 2.5rem;
-      color: #ff4f4f;
-      margin: 0;
-    }
-    .section {
-      background: rgba(0, 0, 0, 0.6);
-      margin: 2rem;
-      padding: 2rem;
-      border: 4px solid #ff4f4f;
-      border-radius: 10px;
-    }
-    .section h2 {
-      color: #ffe680;
-      font-size: 1.5rem;
-    }
-    .item {
-      background: rgba(255,255,255,0.1);
-      border: 2px solid #fff;
-      padding: 1rem;
-      margin-top: 1rem;
-    }
-    .item button {
-      background: #ff4f4f;
-      border: none;
-      padding: 0.5rem 1rem;
-      color: white;
-      cursor: pointer;
-      font-family: inherit;
-    }
-    footer {
-      text-align: center;
-      padding: 1rem;
-      background: rgba(0, 0, 0, 0.8);
-      color: #ccc;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StarFall Minecraft Store</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #1e1e1e;
+            color: white;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        header {
+            background-color: #3a3a3a;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: #ffcc00;
+            text-shadow: 2px 2px 5px #000000;
+        }
+
+        .section-title {
+            font-size: 2em;
+            text-align: center;
+            margin-top: 40px;
+            color: #ffcc00;
+            text-shadow: 2px 2px 5px #000000;
+        }
+
+        .rank, .token {
+            display: inline-block;
+            width: 250px;
+            margin: 20px;
+            padding: 20px;
+            background-color: #333;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        .rank h2, .token h2 {
+            font-size: 1.5em;
+            color: #ffcc00;
+        }
+
+        .rank p, .token p {
+            color: #ccc;
+        }
+
+        .price {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #ffcc00;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #ffcc00;
+            color: black;
+            font-size: 1.2em;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #e6a900;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 40px 10px;
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <h1>StarFall Store</h1>
-    <p>Buy Ranks, Tokens, and Crate Keys</p>
-  </header>
+    <header>
+        <h1>StarFall Minecraft Store</h1>
+        <p>Buy ranks, tokens, and crate keys for your StarFall experience!</p>
+    </header>
 
-  <div class="section">
-    <h2>Ranks</h2>
-    <div class="item">
-      <p><strong>Warrior Rank</strong> - $5</p>
-      <button>Buy</button>
-    </div>
-    <div class="item">
-      <p><strong>SkyKnight Rank</strong> - $10</p>
-      <button>Buy</button>
-    </div>
-  </div>
+    <section>
+        <div class="section-title">Ranks</div>
+        <div class="container">
+            <!-- Cosmo Rank -->
+            <div class="rank">
+                <h2>Cosmo Rank</h2>
+                <p>Basic benefits, access to basic features on the server.</p>
+                <p class="price">15₾</p>
+                <a href="#" class="btn">Buy Cosmo Rank</a>
+            </div>
 
-  <div class="section">
-    <h2>Tokens</h2>
-    <div class="item">
-      <p><strong>500 Tokens</strong> - $3</p>
-      <button>Buy</button>
-    </div>
-    <div class="item">
-      <p><strong>1200 Tokens</strong> - $6</p>
-      <button>Buy</button>
-    </div>
-  </div>
+            <!-- Absolute Rank -->
+            <div class="rank">
+                <h2>Absolute Rank</h2>
+                <p>All Cosmo benefits + higher-tier features and VIP area access.</p>
+                <p class="price">30₾</p>
+                <a href="#" class="btn">Buy Absolute Rank</a>
+            </div>
 
-  <div class="section">
-    <h2>Crate Keys</h2>
-    <div class="item">
-      <p><strong>Sky Crate Key</strong> - $2</p>
-      <button>Buy</button>
-    </div>
-    <div class="item">
-      <p><strong>Legend Crate Key</strong> - $5</p>
-      <button>Buy</button>
-    </div>
-  </div>
+            <!-- Overlord Rank -->
+            <div class="rank">
+                <h2>Overlord Rank</h2>
+                <p>All Absolute benefits + enhanced perks and priority access.</p>
+                <p class="price">50₾</p>
+                <a href="#" class="btn">Buy Overlord Rank</a>
+            </div>
 
-  <footer>
-    <p>© 2025 StarFall Server | Not affiliated with Mojang or Microsoft</p>
-  </footer>
+            <!-- Immortal Rank -->
+            <div class="rank">
+                <h2>Immortal Rank</h2>
+                <p>All Overlord benefits + exclusive perks and crate rewards.</p>
+                <p class="price">80₾</p>
+                <a href="#" class="btn">Buy Immortal Rank</a>
+            </div>
+
+            <!-- Star Rank -->
+            <div class="rank">
+                <h2>Star Rank</h2>
+                <p>All Immortal benefits + rare items and VIP support.</p>
+                <p class="price">120₾</p>
+                <a href="#" class="btn">Buy Star Rank</a>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="section-title">Tokens</div>
+        <div class="container">
+            <!-- 200 Tokens -->
+            <div class="token">
+                <h2>200 Tokens</h2>
+                <p>Get 200 tokens for in-game purchases.</p>
+                <p class="price">10₾</p>
+                <a href="#" class="btn">Buy 200 Tokens</a>
+            </div>
+
+            <!-- 500 Tokens -->
+            <div class="token">
+                <h2>500 Tokens</h2>
+                <p>Get 500 tokens for in-game purchases.</p>
+                <p class="price">20₾</p>
+                <a href="#" class="btn">Buy 500 Tokens</a>
+            </div>
+
+            <!-- 800 Tokens -->
+            <div class="token">
+                <h2>800 Tokens</h2>
+                <p>Get 800 tokens for in-game purchases.</p>
+                <p class="price">30₾</p>
+                <a href="#" class="btn">Buy 800 Tokens</a>
+            </div>
+
+            <!-- 1000 Tokens -->
+            <div class="token">
+                <h2>1000 Tokens</h2>
+                <p>Get 1000 tokens for in-game purchases.</p>
+                <p class="price">40₾</p>
+                <a href="#" class="btn">Buy 1000 Tokens</a>
+            </div>
+        </div>
+    </section>
 </body>
 </html>
